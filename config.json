@@ -1,7 +1,15 @@
 {
+<<<<<<< HEAD
   "apiKey": "aPxo7/PdwmPx4fFjqiNfGg1DdeYS3OkkaxkZb854uUr5wAUElKDWR8KNU6/MVFocdrOl4izTnoLU5znHvcgkK1dC9NQ0SDhraBAwn82/UTxHbxtU7LftRdd9ZSYPhOwm:x9dImVepbKE75Ngwtoj5Ng==",
   "resources": {
     "aiPrompt": "You are an AI assistant specialized in providing parenting advice named Stella..."
   },
   "lastUpdated": "2024-12-01T18:04:49.923905"
+=======
+  "apiKey": "c9tmB3kDOaLPKil04RuSPti+IRpE425W0dw3kfcpui25NBVQ2EczvKOAwqJRnqt+HB7TZWqFzhUrTxAoWFf6lmx61ZddhV4z7HGEYIPad4P4dpTHmzxWU3Rw2/et3Joc:V8IeyUws4VGjyG7EVJ2Ucg==",
+  "resources": {
+    "aiPrompt": "You are an AI assistant specialized in providing parenting advice named Stella..."
+  },
+  "lastUpdated": "2024-12-01T17:33:13.259346"
+>>>>>>> 60ca4dc3289b4623ab87261f34825ac354e52502
 }
