@@ -1,1 +1,108 @@
-{"apiKey":"sk-aPxo7PdwmPx4fFjqiNfGg1DdeYS3OkkaxkZb854uUr5wAUElKDWR8KNU6MVFocdrOl4izTnoLU5znHvcgkK1dC9NQ0SDhraBAwn82UTxHbxtU7LftRdd9ZSYPhOwm","resourceMappings":{"goalSettingResource":["goal","achieve"],"toddlersResource":["toddler","child"],"innerChildResource":["inner child","childhood"],"respectAndTrust":["respect","trust"],"bullying":["bully","bullying"],"cashKids":["money","cash","allowance"],"kidsConfidence":["confidence","self-esteem"],"humanNeeds":["needs","basic needs"],"tough":["tough","difficult","hard"],"choicesConsequences":["choice","consequence"],"moneyBudget":["budget","spending"],"mistakesFailuresAndForgiveness":["mistake","failure","forgive"],"schoolSuccess":["school","study","education"],"budgetDebt":["debt","finance"],"fierceFearless":["fierce","fearless","brave"],"childLearns":["learn","teaching"],"funParenting":["fun","enjoy"],"trickyPeople":["stranger","danger","tricky"],"smartstartSchool":["start school","begin school"],"dayOfCalm":["calm","peace","relax"],"settingBounderies":["boundaries","prioritize own needs","time management"],"divorces":["divorce","marriage","separation"]}}
+{
+  "apiKey": "sk-aPxo7PdwmPx4fFjqiNfGg1DdeYS3OkkaxkZb854uUr5wAUElKDWR8KNU6MVFocdrOl4izTnoLU5znHvcgkK1dC9NQ0SDhraBAwn82UTxHbxtU7LftRdd9ZSYPhOwm",
+  "resourceMappings": {
+    "goalSettingResource": [
+      "goal",
+      "achieve"
+    ],
+    "toddlersResource": [
+      "toddler",
+      "child"
+    ],
+    "innerChildResource": [
+      "inner child",
+      "childhood"
+    ],
+    "respectAndTrust": [
+      "respect",
+      "trust"
+    ],
+    "bullying": [
+      "bully",
+      "bullying"
+    ],
+    "cashKids": [
+      "money",
+      "cash",
+      "allowance"
+    ],
+    "kidsConfidence": [
+      "confidence",
+      "self-esteem"
+    ],
+    "humanNeeds": [
+      "needs",
+      "basic needs"
+    ],
+    "tough": [
+      "tough",
+      "difficult",
+      "hard"
+    ],
+    "choicesConsequences": [
+      "choice",
+      "consequence"
+    ],
+    "moneyBudget": [
+      "budget",
+      "spending"
+    ],
+    "mistakesFailuresAndForgiveness": [
+      "mistake",
+      "failure",
+      "forgive"
+    ],
+    "schoolSuccess": [
+      "school",
+      "study",
+      "education"
+    ],
+    "budgetDebt": [
+      "debt",
+      "finance"
+    ],
+    "fierceFearless": [
+      "fierce",
+      "fearless",
+      "brave"
+    ],
+    "childLearns": [
+      "learn",
+      "teaching"
+    ],
+    "funParenting": [
+      "fun",
+      "enjoy"
+    ],
+    "trickyPeople": [
+      "stranger",
+      "danger",
+      "tricky"
+    ],
+    "smartstartSchool": [
+      "start school",
+      "begin school"
+    ],
+    "dayOfCalm": [
+      "calm",
+      "peace",
+      "relax"
+    ],
+    "settingBounderies": [
+      "boundaries",
+      "prioritize own needs",
+      "time management"
+    ],
+    "divorces": [
+      "divorce",
+      "marriage",
+      "separation"
+    ],
+    "jcCasagan": [
+      "jc casagan"
+    ],
+    "typeboss": [
+      "typeboss"
+    ]
+  }
+}
