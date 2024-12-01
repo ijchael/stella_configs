@@ -8,51 +8,42 @@ This directory contains the configuration files for the Stella AI assistant. The
 stella_configs/
 ├── config.json           # Main config with API key and resource mappings
 ├── resources/           # Individual resource files
-│   ├── ai-prompt.json
-│   ├── goal-setting.json
-│   ├── toddlers.json
+│   ├── goal-setting-resource.json
+│   ├── toddlers-resource.json
 │   └── ...
 └── README.md
 ```
 
-## Smart Resource Management
+## Resource Management
 
-### Token Management
-The system automatically manages GPT-4's token limit (4096 tokens):
-- Counts tokens for all messages using tiktoken
-- Includes estimated response tokens (2000)
-- Dynamically adjusts resource inclusion when near limits
-- Prioritizes most relevant resources when reducing content
-
-### Resource Prioritization
-Resources are selected and prioritized based on:
-1. Keyword matches in the question
-2. Number of matching keywords (higher = more relevant)
-3. Token budget availability
-
-Example:
+### 1. Source Files
+Resources are maintained in `lib/resources/stellains.dart` using triple quotes for readability:
 ```dart
-Question: "How can I help my child achieve their goals at school?"
-Matches:
-- goalSettingResource: ["goal", "achieve"] = 2 matches
-- schoolSuccess: ["school"] = 1 match
-- childLearns: ["learn"] = 0 matches
-Priority: goalSettingResource > schoolSuccess > childLearns
+const String goalSettingResource = '''
+Your content here
+Multiple lines are fine
+''';
 ```
 
-## Configuration Components
+### 2. JSON Generation
+The split_config.dart script automatically:
+- Converts triple-quoted content to proper JSON format
+- Escapes special characters
+- Handles newlines and quotes correctly
+- Creates individual JSON files:
+```json
+{
+  "content": "Your content here\nMultiple lines are fine"
+}
+```
 
-### 1. Resource Content (resources/*.json)
-Individual resource files containing the actual content.
-
-### 2. Resource Mappings (config.json)
-Maps keywords to resources for dynamic content selection:
+### 3. Resource Mappings
+Keywords are mapped to resources in config.json:
 ```json
 {
   "resourceMappings": {
     "goalSettingResource": ["goal", "achieve"],
-    "schoolSuccess": ["school", "study", "education"],
-    // ... other mappings
+    "toddlersResource": ["toddler", "child"]
   }
 }
 ```
@@ -61,15 +52,15 @@ Maps keywords to resources for dynamic content selection:
 
 ### Adding New Resources
 
-1. Add your new resource in `lib/resources/stellains.dart`:
+1. Add content in `lib/resources/stellains.dart`:
    ```dart
    const String newResource = '''
    Your new resource content here
-   Using triple quotes for formatting
+   Using triple quotes for easy editing
    ''';
    ```
 
-2. Add keywords mapping in `stella_configs/config.json`:
+2. Add keywords in `stella_configs/config.json`:
    ```json
    {
      "resourceMappings": {
@@ -78,7 +69,7 @@ Maps keywords to resources for dynamic content selection:
    }
    ```
 
-3. Run the split script:
+3. Generate JSON files:
    ```bash
    dart tools/split_config.dart
    ```
@@ -91,94 +82,65 @@ Maps keywords to resources for dynamic content selection:
    git push origin main
    ```
 
-### Updating Resource Content
+### Updating Existing Resources
 
 1. Edit content in `lib/resources/stellains.dart`
-2. Run the split script:
-   ```bash
-   dart tools/split_config.dart
-   ```
+2. Run `dart tools/split_config.dart`
 3. Push changes
 
-### Updating Resource Mappings
+## Token Management
 
-1. Edit `stella_configs/config.json`:
-   ```json
-   {
-     "resourceMappings": {
-       "resourceName": ["new", "keywords", "here"]
-     }
-   }
-   ```
-2. Push changes
+The system automatically:
+- Counts tokens using tiktoken
+- Manages GPT-4's 4096 token limit
+- Prioritizes resources by relevance
+- Adjusts content when near limits
 
-## How It Works
-
-1. Question Processing:
-   - User asks a question
-   - System tokenizes the question
-   - Matches keywords against mappings
-   - Sorts resources by relevance
-
-2. Token Management:
-   - Counts tokens for system prompt
-   - Counts tokens for user info
-   - Counts tokens for each resource
-   - Reserves tokens for response
-   - Adjusts included resources if needed
-
-3. Resource Selection:
-   - Prioritizes resources with most keyword matches
-   - Includes resources until token limit
-   - Falls back to most relevant if over limit
-   - Always includes system prompt and user info
-
-4. Real-time Updates:
-   - Resource content updates
-   - Keyword mapping updates
-   - No app release needed
+### Token Optimization
+1. System messages (prompt, user info)
+2. Most relevant resources (by keyword matches)
+3. Conversation history
+4. Reserved space for response
 
 ## Best Practices
 
-### Resource Content
-- Keep content concise but informative
-- Structure content for easy reading
-- Consider token usage when writing
+### Content Formatting
+- Use triple quotes in stellains.dart
+- Let split_config.dart handle JSON formatting
+- Don't manually edit JSON files
 
-### Keyword Mapping
-- Choose specific, relevant keywords
-- Order keywords by importance
-- Test with various questions
-- Monitor token usage
+### Resource Organization
+- Keep content focused and modular
+- Use descriptive resource names
+- Choose relevant keywords
 
-### Token Management
-- Monitor average token usage
-- Keep resources focused
-- Split large resources if needed
-- Test with long conversations
+### Token Efficiency
+- Keep resources concise
+- Focus on essential content
+- Consider token limits when writing
 
 ## Troubleshooting
 
+### JSON Formatting Issues
+1. Only edit in stellains.dart
+2. Use triple quotes for content
+3. Run split_config.dart to generate JSON
+4. Never manually edit JSON files
+
 ### Resource Selection Issues
 1. Check keyword mappings
-2. Verify token counts
-3. Test with different questions
-4. Monitor resource prioritization
-
-### Token Limit Issues
-1. Check resource sizes
-2. Monitor conversation history
-3. Consider splitting resources
-4. Verify token counting
+2. Verify JSON formatting
+3. Test with sample questions
+4. Monitor token usage
 
 ### Performance Optimization
-1. Cache token counts
-2. Prioritize essential resources
-3. Monitor API response times
-4. Test with various scenarios
+1. Keep resources focused
+2. Monitor token counts
+3. Test with various scenarios
+4. Verify JSON parsing
 
 ## Security and Reliability
-- Token-aware resource selection
-- Graceful degradation under limits
-- Fallback to essential content
-- Automatic resource prioritization
+- Proper JSON escaping
+- Token-aware selection
+- Automatic formatting
+- Multiple backup levels
