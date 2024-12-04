@@ -16,50 +16,19 @@ stella_configs/
 
 ## Resource Management
 
-### 1. Configuration Editor
-The app includes a built-in configuration editor that provides:
-- Real-time resource editing
-- Automatic JSON formatting
-- Dynamic resource dropdown
-- Token counting for content
+### 1. Resource Naming
+The system uses two naming formats:
+- camelCase in code (e.g., `jcCasagan`)
+- kebab-case in UI and files (e.g., `jc-casagan`)
 
-To add new resources:
-1. Open the configuration editor
-2. Add the resource to "Resource Mappings (JSON)":
-   ```json
-   {
-     "resourceMappings": {
-       "newResource": ["keyword1", "keyword2"]
-     }
-   }
-   ```
-3. Click Save - the new resource will appear in the dropdown
-4. Select it from the dropdown to add its content
-
-### 2. Source Files
-Resources are maintained in `lib/resources/stellains.dart` using triple quotes for readability:
+This conversion is handled automatically:
 ```dart
-const String goalSettingResource = '''
-Your content here
-Multiple lines are fine
+// In code (camelCase)
+const String jcCasagan = '''
+JC Casagan is Stella's developer.
 ''';
-```
 
-### 3. JSON Generation
-The split_config.dart script automatically:
-- Converts triple-quoted content to proper JSON format
-- Escapes special characters
-- Handles newlines and quotes correctly
-- Creates individual JSON files:
-```json
-{
-  "content": "Your content here\nMultiple lines are fine"
-}
-```
-
-### 4. Resource Mappings
-Keywords are mapped to resources in config.json:
-```json
+// In config.json (camelCase keys)
 {
   "resourceMappings": {
     "goalSettingResource": ["goal", "achieve"],
@@ -77,6 +46,7 @@ Keywords are mapped to resources in config.json:
 3. Save changes - new resources appear in the dropdown
 4. Select the resource and add its content
 5. Save again to update all files
+6. Changes are immediately available to the AI
 
 ### Manual Updates (Alternative)
 
@@ -142,6 +112,7 @@ The system automatically:
 - Keep content focused and modular
 - Use descriptive resource names
 - Choose relevant keywords
+- Test keywords with sample questions
 
 ### Token Efficiency
 - Use token counter in the editor
@@ -157,23 +128,23 @@ The system automatically:
 3. Check for proper keyword formatting
 4. Verify content saves successfully
 
-### JSON Formatting Issues
-1. Use the configuration editor
-2. Don't manually edit JSON files
-3. Let the editor handle formatting
-4. Run split_config.dart if needed
+### Resource Recognition Issues
+1. Check resource mappings in config.json
+2. Verify keywords match user questions
+3. Clear caches if updates don't appear
+4. Test with sample questions
 
-### Resource Selection Issues
-1. Check keyword mappings
-2. Verify JSON formatting
-3. Test with sample questions
-4. Monitor token usage
+### Cache Management
+1. Changes should appear immediately
+2. If not, try saving again
+3. Check for error messages
+4. Clear app cache manually if needed
 
 ### Performance Optimization
 1. Keep resources focused
 2. Use token counter
 3. Test with various scenarios
-4. Verify JSON parsing
+4. Monitor resource usage
 
 ## Security and Reliability
 - Proper JSON escaping
@@ -181,3 +152,4 @@ The system automatically:
 - Automatic formatting
 - Multiple backup levels
 - Built-in configuration editor
+- Automatic cache management
