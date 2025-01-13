@@ -1,0 +1,130 @@
+{
+  "apiKey": "6ihY1IEt/dzeszJJgB6+MGAc+kMfQA1bXSAx0BrCwBTR+IMs2Z4i0x5TWoP50MK/y5jHBlamKHEsLCyLHD8ruJtm1gFLRWMqBB64beSXzvmw15d/uobKAJwty/b83W2w:fVXvAvx30MMSTarEIFwq5A==",
+  "resourceMappings": {
+    "goalSettingResource": [
+      "goal",
+      "achieve"
+    ],
+    "toddlersResource": [
+      "toddler",
+      "child"
+    ],
+    "innerChildResource": [
+      "inner child",
+      "childhood"
+    ],
+    "respectAndTrust": [
+      "respect",
+      "trust"
+    ],
+    "bullying": [
+      "bully",
+      "bullying"
+    ],
+    "cashKids": [
+      "money",
+      "cash",
+      "allowance"
+    ],
+    "kidsConfidence": [
+      "confidence",
+      "self-esteem"
+    ],
+    "humanNeeds": [
+      "needs",
+      "basic needs"
+    ],
+    "tough": [
+      "tough",
+      "difficult",
+      "hard"
+    ],
+    "choicesConsequences": [
+      "choice",
+      "consequence"
+    ],
+    "moneyBudget": [
+      "budget",
+      "spending"
+    ],
+    "mistakesFailuresAndForgiveness": [
+      "mistake",
+      "failure",
+      "forgive"
+    ],
+    "schoolSuccess": [
+      "school",
+      "study",
+      "education"
+    ],
+    "budgetDebt": [
+      "debt",
+      "finance"
+    ],
+    "fierceFearless": [
+      "fierce",
+      "fearless",
+      "brave"
+    ],
+    "childLearns": [
+      "learn",
+      "teaching"
+    ],
+    "funParenting": [
+      "fun",
+      "enjoy"
+    ],
+    "trickyPeople": [
+      "stranger",
+      "danger",
+      "tricky"
+    ],
+    "smartstartSchool": [
+      "start school",
+      "begin school"
+    ],
+    "dayOfCalm": [
+      "calm",
+      "peace",
+      "relax"
+    ],
+    "settingBounderies": [
+      "boundaries",
+      "prioritize own needs",
+      "time management"
+    ],
+    "divorces": [
+      "divorce",
+      "marriage",
+      "separation"
+    ],
+    "jcCasagan": [
+      "jc casagan"
+    ],
+    "typeboss": [
+      "typeboss"
+    ],
+    "princess": [
+      "Princess Altarejos"
+    ],
+    "jillian": [
+      "Jillian Reese"
+    ],
+    "starkid": [
+      "teamstarkid"
+    ],
+    "ijchael": [
+      "iJchael"
+    ],
+    "princessasaurus": [
+      "princessasaurus"
+    ],
+    "zoeygirl": [
+      "zoeygirl"
+    ],
+    "rudeness": [
+      "rudeness",
+      "talk back"
+    ]
+  }
+}
